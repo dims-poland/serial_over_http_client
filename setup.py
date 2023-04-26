@@ -9,6 +9,7 @@ setup(
     author='Michal Vrábel',
     author_email='michal.vrabel@ncbj.gov.pl',
     license='BSD 2-clause',
+    setup_requires=['wheel'],
     install_requires=[],
     data_files=[],
     classifiers=[
