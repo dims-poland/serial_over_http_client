@@ -28,6 +28,36 @@ class SerialOverHttpClient:
 
     connection: typing.Union[http.client.HTTPConnection, None]
 
+    @classmethod
+    def from_address(
+            cls,
+            address,
+            timeout=DEFAULTS['timeout'],
+            retry_interval=DEFAULTS['retry_interval'],
+            num_post_retries=DEFAULTS['num_post_retries'],
+            token=DEFAULTS['token'],
+            token_variable=DEFAULTS['token_variable'],
+            http_content_type=DEFAULTS['http_content_type'],
+            logger_name=DEFAULTS['logger_name'],
+            connect_on_init=True
+    ):
+        import urllib.parse
+        if isinstance(address, str):
+            parsed_address = urllib.parse.urlparse(address)
+            address = (parsed_address.hostname, parsed_address.port)
+        return cls(
+            host=address[0],
+            port=int(address[1]),
+            timeout=timeout,
+            retry_interval=retry_interval,
+            num_post_retries=num_post_retries,
+            token=token,
+            token_variable=token_variable,
+            http_content_type=http_content_type,
+            logger_name=logger_name,
+            connect_on_init=connect_on_init,
+        )
+
     def __init__(
             self,
             host=DEFAULTS['host'],
