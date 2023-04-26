@@ -5,6 +5,8 @@ import time
 import typing
 import urllib.parse
 
+__version__ = '0.1'
+
 DEFAULTS = dict(
     host='127.0.0.1',
     port=8888,
