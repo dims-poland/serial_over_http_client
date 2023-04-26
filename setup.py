@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='serial_over_http_client',
-    version='0.1',
+    version='0.1.1',
     description='Sends requests to a HTTP server. The interface partially implements pySerial API.',
     url='https://github.com/dims-poland/serial_over_http',
     author='Michal Vrábel',
