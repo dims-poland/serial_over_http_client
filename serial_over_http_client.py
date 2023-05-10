@@ -5,7 +5,8 @@ import time
 import typing
 import urllib.parse
 
-__version__ = '0.1.1'
+from .version import __version__
+
 
 DEFAULTS = dict(
     host='127.0.0.1',
@@ -88,7 +89,7 @@ class SerialOverHttpClient:
 
     def _update_token_str(self):
         if self.token:
-            self.token_param_str = '?{}={}'.format(self.token_variable, urllib.parse.urlencode(self.token))
+            self.token_param_str = '?{}={}'.format(self.token_variable, urllib.parse.quote_plus(self.token))
         else:
             self.token_param_str = ''
 

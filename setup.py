@@ -1,9 +1,9 @@
 from setuptools import setup
-
+import version
 
 setup(
     name='serial_over_http_client',
-    version='0.1.1',
+    version=version.__version__,
     description='Sends requests to a HTTP server. The interface partially implements pySerial API.',
     url='https://github.com/dims-poland/serial_over_http',
     author='Michal Vrábel',
