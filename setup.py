@@ -1,5 +1,5 @@
 from setuptools import setup
-import version
+from serial_over_http_client import version
 
 setup(
     name='serial_over_http_client',
@@ -16,5 +16,5 @@ setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
     ],
-    py_modules=['serial_over_http_client']
+    packages=['serial_over_http_client']
 )

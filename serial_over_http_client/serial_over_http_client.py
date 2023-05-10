@@ -5,7 +5,7 @@ import time
 import typing
 import urllib.parse
 
-from .version import __version__
+from serial_over_http_client.version import __version__
 
 
 DEFAULTS = dict(
