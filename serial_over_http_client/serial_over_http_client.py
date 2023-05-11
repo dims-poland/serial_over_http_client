@@ -173,7 +173,7 @@ class SerialOverHttpClient:
             self.connect(force=True)
         # self.num_post_retries > 0 is intentional
         if retries >= self.num_post_retries > 0:
-            self.logger.error(f"Too post attempts (maximum: {self.num_post_retries}")
+            self.logger.error(f"Too many post attempts (maximum: {self.num_post_retries})")
         if request_failed:
             if caught_exc is not None:
                 raise SerialToHttpClientError(f'Request failed due to {failure_reason}') from caught_exc
